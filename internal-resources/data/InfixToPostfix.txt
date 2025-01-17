@@ -1,0 +1,186 @@
+Convert an arithmetic expression from infix to postfix notation using Java's Stack class.
+
+### **Exercise: Convert Infix Expression to Postfix Using Java's Stack Class**
+
+#### **1. Exercise Instructions**
+
+An **infix expression** is an arithmetic expression where the operators are placed between the operands (for example, \( A + B \)). A **postfix expression** is a form where the operators come after the operands (for example, \( AB+ \)).
+
+Your task is to write a program to convert an arithmetic expression from infix to postfix notation using Java's `Stack` class. Follow these rules for the conversion:
+
+1. **Operators and precedence**: 
+   - \( + \) and \( - \) have the lowest precedence.
+   - \( * \) and \( / \) have higher precedence.
+   - \( ^ \) (exponentiation) has the highest precedence and is **right-associative**.
+2. Parentheses \( () \): 
+   - When \( ( \) is encountered, push it onto the stack.
+   - When \( ) \) is encountered, pop all operators until \( ( \) is encountered.
+
+**Example**:  
+Input: `A + B * C`  
+Output: `ABC*+`
+
+Input: `A * (B + C)`  
+Output: `ABC+*`
+
+Input: `A + B * C / (D - E)`  
+Output: `ABC*DE-/+`
+
+---
+
+#### **2. Starter Code**
+
+Save the following as `InfixToPostfix.java`:
+
+```java
+import java.util.Stack;
+
+public class InfixToPostfix {
+
+    /**
+     * Converts the given infix expression to a postfix expression.
+     * @param infix The input infix expression.
+     * @return The postfix expression as a String.
+     */
+    public String infixToPostfix(String infix) {
+        // TODO: Implement the logic for converting infix to postfix
+        return ""; // Replace with the final postfix expression
+    }
+
+    public static void main(String[] args) {
+        InfixToPostfix converter = new InfixToPostfix();
+        String infixExpression = "A + B * C";
+        String postfixExpression = converter.infixToPostfix(infixExpression);
+        System.out.println("Postfix Expression: " + postfixExpression);
+    }
+}
+```
+
+---
+
+#### **3. JUnit5 Test Cases**
+
+Save the following as `InfixToPostfixTest.java`:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class InfixToPostfixTest {
+
+    @Test
+    void testBasicExpressions() {
+        InfixToPostfix converter = new InfixToPostfix();
+        assertEquals("ABC*+", converter.infixToPostfix("A + B * C"));
+        assertEquals("ABC+*", converter.infixToPostfix("A * (B + C)"));
+        assertEquals("ABC*DE-/+", converter.infixToPostfix("A + B * C / (D - E)"));
+    }
+
+    @Test
+    void testParenthesesHandling() {
+        InfixToPostfix converter = new InfixToPostfix();
+        assertEquals("AB+C*", converter.infixToPostfix("(A + B) * C"));
+        assertEquals("ABC/-", converter.infixToPostfix("A / (B - C)"));
+    }
+
+    @Test
+    void testSingleOperand() {
+        InfixToPostfix converter = new InfixToPostfix();
+        assertEquals("A", converter.infixToPostfix("A"));
+    }
+}
+```
+
+---
+
+#### **4. Solution Code**
+
+Save the following as `InfixToPostfix.java`:
+
+```java
+import java.util.Stack;
+
+public class InfixToPostfix {
+
+    /**
+     * Helper method to determine precedence of operators.
+     */
+    private int getPrecedence(char operator) {
+        switch (operator) {
+            case '+': case '-':
+                return 1;
+            case '*': case '/':
+                return 2;
+            case '^':
+                return 3;
+            default:
+                return -1;
+        }
+    }
+
+    /**
+     * Converts the given infix expression to a postfix expression.
+     * @param infix The input infix expression.
+     * @return The postfix expression as a String.
+     */
+    public String infixToPostfix(String infix) {
+        Stack<Character> stack = new Stack<>();
+        StringBuilder postfix = new StringBuilder();
+
+        for (char c : infix.toCharArray()) {
+            // Ignore spaces
+            if (c == ' ') continue;
+
+            // Operand: append directly
+            if (Character.isLetterOrDigit(c)) {
+                postfix.append(c);
+            }
+            // Opening parenthesis: push to stack
+            else if (c == '(') {
+                stack.push(c);
+            }
+            // Closing parenthesis: pop until '(' is found
+            else if (c == ')') {
+                while (!stack.isEmpty() && stack.peek() != '(') {
+                    postfix.append(stack.pop());
+                }
+                if (!stack.isEmpty() && stack.peek() == '(') {
+                    stack.pop();
+                }
+            }
+            // Operator
+            else {
+                while (!stack.isEmpty() && getPrecedence(c) <= getPrecedence(stack.peek())) {
+                    postfix.append(stack.pop());
+                }
+                stack.push(c);
+            }
+        }
+
+        // Pop remaining operators from the stack
+        while (!stack.isEmpty()) {
+            postfix.append(stack.pop());
+        }
+
+        return postfix.toString();
+    }
+
+    public static void main(String[] args) {
+        InfixToPostfix converter = new InfixToPostfix();
+        String infixExpression = "A + B * C";
+        String postfixExpression = converter.infixToPostfix(infixExpression);
+        System.out.println("Postfix Expression: " + postfixExpression);
+    }
+}
+```
+
+---
+
+#### **5. Estimated Time to Complete**
+
+- **Understanding infix and postfix concepts**: ~20-30 minutes
+- **Implementing the method**: ~30-40 minutes
+- **Testing the implementation**: ~15-20 minutes
+- **Writing and running unit tests**: ~20-30 minutes
+
+**Total Time for Completion**: ~1.5 to 2 hours for a beginner in Java programming.

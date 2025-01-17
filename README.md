@@ -1,47 +1,44 @@
 <h1>
   <span class="prefix"></span>
-  <span class="headline">[tktk Headline]</span>
+  <span class="headline">Linked Lists in Java Lab</span>
 </h1>
 
 ## About
 
-tktk Write a short but descriptive summary of the content in this module. Introduce the lab. What will the students build in this lab?
+In this lab module, you'll explore Java's built-in LinkedList class through practical exercises. You'll create a palindrome checker to test if a linked list reads the same forward and backward and simulate browser history management to navigate and track visited pages—strengthening your understanding of dynamic data manipulation and problem-solving.
 
 ## Content
 
 - [Setup](./setup/README.md)
-- [Exercise](./exercise/README.md)
+- [Palindrome Checker](./palindrome-checker/README.md)
+- [Browser History Simulation](./browser-history-simulation/README.md)
 
 ## Internal
 
 ### Prerequisites
 
-- tktk
+- Singly Linked Lists in Java
+- Doubly Linked Lists in Java
 
 ### Time to complete
 
-Estimated time to complete core lab exercise: **tktk min**
+Estimated time to complete core lab exercise: **2 hr**
 
 ### Starter code
 
 tktk If there is not a starter code repo that students will fork and clone to start this lab, then this section and all of its content should be removed.
 
-🟢 [Starter code](https://git.generalassemb.ly/modular-curriculum-all-courses/tktk)
+🟢 [Starter code](https://git.generalassemb.ly/modular-curriculum-all-courses/linked-lists-in-java-lab-starter.git)
 
 ### Solution code
 
-🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/tktk)
-
-### Deployed sites
-
-tktk If there is not a deployed site related to this module this section and all of its content should be removed.
-
-🌐 [Live site](https://generalassemb.ly/tktk)
+🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/linked-lists-in-java-lab-solution.git)
 
 ### Course landing pages
 
-- [tktk-course-acronym - tktk Course Full Name](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/tktk-module-name/canvas-landing-pages/tktk-course-acronym.html)
-- [Fallback](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/tktk-module-name/canvas-landing-pages/fallback.html)
+- [JCD - Java Career Development Program](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/linked-lists-in-java-lab/canvas-landing-pages/jcd.html)
+- [JSC - Java Short Course](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/linked-lists-in-java-lab/canvas-landing-pages/jsc.html)
+- [Fallback](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/linked-lists-in-java-lab/canvas-landing-pages/fallback.html)
 
 ### Resources
 

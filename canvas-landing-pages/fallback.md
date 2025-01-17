@@ -1,22 +1,15 @@
 <!-- ! Do not delete or rename this file! -->
 <h1>
   <span class="prefix"></span>
-  <span class="headline">[tktk Headline]</span>
+  <span class="headline">Linked Lists in Java Lab</span>
 </h1>
-
-tktk Add some default course navigation content here. This landing page will be used when a student's course cannot be determined, so don't include any course-specific details.
 
 ## About
 
-tktk Write a short but descriptive summary of the content in this module. Introduce the lab. What will the students build in this lab?
+In this lab module, you'll explore Java's built-in LinkedList class through practical exercises. You'll create a palindrome checker to test if a linked list reads the same forward and backward and simulate browser history management to navigate and track visited pages—strengthening your understanding of dynamic data manipulation and problem-solving.
 
 ## Content
 
-- [Setup](./setup/README.md)
-- [Exercise](./exercise/README.md)
-
-## Level Up
-
-tktk If there is no Level Up content for this lab, then this section and all of its content should be removed.
-
-🚀 [Level Up](./level-up/README.md)
+- [Setup](../setup/README.md)
+- [Palindrome Checker](../palindrome-checker/README.md)
+- [Browser History Simulation](../browser-history-simulation/README.md)

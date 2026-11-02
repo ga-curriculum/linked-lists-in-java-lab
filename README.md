@@ -28,11 +28,11 @@ Estimated time to complete core lab exercise: **2 hr**
 
 tktk If there is not a starter code repo that students will fork and clone to start this lab, then this section and all of its content should be removed.
 
-🟢 [Starter code](https://git.generalassemb.ly/modular-curriculum-all-courses/linked-lists-in-java-lab-starter.git)
+🟢 [Starter code](https://github.com/ga-curriculum/linked-lists-in-java-lab-starter.git)
 
 ### Solution code
 
-🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/linked-lists-in-java-lab-solution.git)
+🏁 [Solution code](https://github.com/ga-curriculum/linked-lists-in-java-lab-solution.git)
 
 ### Course landing pages
 
